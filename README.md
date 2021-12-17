@@ -1,2 +1,0 @@
-# battleface
-Code Challenge
