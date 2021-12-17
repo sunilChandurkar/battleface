@@ -61,15 +61,16 @@
         end_date: $("#end_date").val()
       }
 
+      //Request a token
       var request = $.ajax({
-        url: "/battleface/basic-php-jwt-auth-example/public/gettoken.php",
+        url: "/battleface/public/gettoken.php",
         method: "POST"
       });
 
       request.done(function( jwtToken ) {
-
+        //Send post data and get trip total
         var req = $.ajax({
-          url: "/battleface/basic-php-jwt-auth-example/public/resource.php",
+          url: "/battleface/public/resource.php",
           headers: {
             'Authorization': `Bearer ${jwtToken}`,
             'Content-Type': 'application/json'
